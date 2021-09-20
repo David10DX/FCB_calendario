@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>CALENDARIO</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        *{
+          box-sizing: border-box;
+          margin: 0px;
+          list-style:none;
+          top:0;
+        } 
+        body{
+            background-color: rgb(49, 49, 87); 
+        }
+        .menuh{
+            background-color: rgb(49, 49, 87);
+            height:50px;
+            box-shadow: 0px 0px 10px red;
+        }
+        .menun{
+            display:none;
+        }
+        .men{
+            float:left;
+        }
+        ul{
+            display: none;
+        }
+
+        input:checked  ~ ul{
+            display:block;
+        }
+
+        input {
+            display: none;
+        }
+        label {
+            padding-top:5px;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 40px;
+            height: 50px;
+            line-height: 30px;
+            font-weight: bold;
+            text-align: center;
+            user-select: none;
+            font-size: 40px;
+            color: red;
+        }
+        li{
+            text-decoration: none;
+            color: rgba(105, 105, 148, 0.911);
+            height:60px;
+            font-family: Oswald,sans-serif;
+            font-size: 16px;
+            display: inline-block;
+            padding-top:12px;
+            padding-bottom:12px;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+            font-weight: bold;
+            border: 1px solid rgba(105, 105, 148, 0.226);
+            text-align: center; 
+            background-color: rgb(49, 49, 87)
+        }
+        li a{
+            text-decoration: none;
+            font-family: Oswald,sans-serif;
+            font-size: 16px;
+            color: rgba(105, 105, 148, 0.911);
+            display: inline-block;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+            font-weight: bold;
+            text-align: center;
+        }
+        li:hover{
+            background-color: rgba(148, 34, 34, 0.589);
+            color: rgba(201, 40, 40, 0.658);
+            text-shadow: 0px 0px 1px rgb(180, 57, 57);
+        }
+        li a:hover{
+            background-color: transparent;
+            color: rgba(201, 40, 40, 0.658);
+            text-shadow: 0px 0px 1px rgb(180, 57, 57);
+        }
+        .imagen3{
+            float:left;
+        }
+        .imagen3 img{
+            width:100%;
+            height:45px;
+            padding-top: 5px;
+            padding-right: 5px;
+        }
+        .redes{
+            text-align:center;
+            color:white;
+            font-family: Bebas Neue;
+            border-top: 2px solid black;
+            box-shadow: 0px 0px 15px red;
+
+        }
+        .redes h3{
+            font-size: 15px;
+            height:30px;
+            padding-top:20px;
+        }
+        .red{
+            height:60px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 0px 0px transparent;
+        }
+        .separadort{
+            height:10px;
+        }
+        .reds{
+            height:60px;
+            float:left;
+        }
+        .reds img{
+            width:100%;
+            height:60px;
+            padding-left:3px;
+            padding-right:3px;
+            padding-top:3px;
+            padding-bottom:3px;
+        }
+        .creditos{
+            height:120px;
+            background-color: rgba(18,16,37,255);
+            padding-top: 15px;
+            margin-top:120px;
+        }
+        .creditos p{
+            background-color: transparent;
+            font-size: 10px;
+            float: left;
+            text-align:center;
+        }
+        .creditos a{
+            text-decoration: none;
+            background-color: transparent;
+            font-size: 10px;
+            height: 25px;
+            float: left;
+            color:white;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align:center;
+        }
+        .creditos a:hover{
+            font-size:15px;
+        } 
+        .parte1{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:80px;
+            height:60px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px black;
+            margin-bottom:30px;
+        }
+        .opcion1 a{
+            text-decoration:none;
+            color:black;
+            width:100%;
+        }
+        .opcion1{
+            text-decoration:none;
+            padding-top:10px;
+            font-size:20px;
+            font-family: Bebas Neue;
+            padding-left:5px;
+            padding-right:30px;
+            float:left;
+        }
+        .opcion1:hover{
+            background-color: gold;
+            border-radius:20px;
+            border:1px solid black;
+            box-shadow: 0px 0px 15px black;
+        }
+        .parte2{
+            margin-left: auto;
+            margin-right: auto;
+            height:700px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px black;
+            margin-bottom:90px;
+            font-family: Bebas Neue;
+        }
+        .mes h1{
+            text-align:center;
+            padding-top:10px;
+            float:left;
+        }
+        .partido{
+            height:50px;
+            text-align:center;
+            float:left;
+            border-bottom: 3px solid rgb(189, 149, 149);
+            padding-top:0px;
+        }
+        .partido:hover{
+            border-left: 5px solid rgb(118, 118, 201);
+            border-right: 5px solid rgb(145, 39, 39);
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px black;
+        }
+        .partido p{
+            padding-top:10px;
+        }
+        .fecha{
+            float:left;
+            font-size:10px;
+        }
+        .liga{
+            float:left;
+        }
+        .nombre{
+            float:left;
+            font-size:10px;
+        }
+        .escudo{
+            float:left;
+        }
+        .vs{
+            float:left;
+            font-size:25px;
+            padding-top:0px;
+        }
+        .vs p{
+            padding-top:0px;
+        }
+        .partido img{
+            width:100%;
+            height:40px;
+        }        
+        @media only screen and (min-width:432px){
+            .imagen3 img{
+                width:75%;
+                height:45px;
+                padding-top: 5px;
+                padding-right: 5px;
+            }
+            .reds{
+                height:100px;
+                float:left;
+            }
+            .reds img{
+                width:70%;
+                height:100px;
+            } 
+            .creditos{
+                margin-top:230px;
+            } 
+            .separadort{
+                height:15px;
+            }
+        } 
+        @media only screen and (min-width:992px){
+            .menuh{
+                display: none;
+            }
+            nav{
+                position:fixed;
+            }
+            .menun{
+                display:block;
+                background-color: rgb(49, 49, 87);
+                height:80px;
+                float:left;
+                text-align: center;
+                box-shadow: 0 0 50px red;
+            }
+            .imagen{
+                float:left;
+                padding-top:10px;
+                padding-left: 40px;
+                height:80px;
+                border-left: 5px solid rgb(0, 0, 145);
+                border-right: 5px solid rgb(184, 0, 0);
+                text-align:left;
+            }
+            .imagen:hover{
+                border-bottom: 5px solid rgb(184, 0, 0);
+                border-top: 5px solid rgb(0, 0, 145);
+                padding-top:4px;
+            }
+            .imagen1{
+                width:80%;
+                height: 60px;
+            }
+            .opciones{
+                float:left;
+            }
+            .opcion{
+                text-decoration: none;
+                color: rgba(105, 105, 148, 0.911);
+                height:60px;
+                font-family: Oswald,sans-serif;
+                font-size: 20px;
+                display: block;
+                padding-top:12px;
+                padding-bottom:12px;
+                text-transform: uppercase;
+                text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+                float:left;
+                font-weight: bold;
+                border: 1px solid rgba(105, 105, 148, 0.226);
+            } 
+            .opcion:hover{
+                background-color: rgba(148, 34, 34, 0.589);
+                color: rgba(201, 40, 40, 0.658);
+                text-shadow: 0px 0px 1px rgb(180, 57, 57);
+            }  
+            .espacio{
+                height:20px;
+                float:right;
+                border: 1px solid rgba(105, 105, 148, 0.226);
+            }
+            .imagen2{
+                float:left;
+            }
+            .imagen2 img{
+                padding-top: 10px;
+                width: 60%;
+            }
+            .redes{
+                height:280px;
+                text-align:center;
+                color:white;
+                border-top: 2px solid black;
+                box-shadow: 0px 0px 15px red;
+
+            }
+            .redes h3{
+                font-size: 25px;
+                height:50px;
+                padding-top:20px;
+            }
+            .redes div{
+                box-shadow: 0px 0px 0px transparent;
+            }
+            .red{
+                height:100px;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 0px 0px 0px transparent;
+            }
+            .reds{
+                height:100px;
+                float:left;
+                padding-left:5px;
+                padding-right:5px;
+            }
+            .reds img{
+                width:100%;
+                height:100px;
+                padding:0px;
+            }
+            .reds img:hover{
+                border: 2px solid white;
+            }
+            .creditos{
+                height:70px;
+                background-color: rgba(18,16,37,255);
+                padding-top: 15px;
+                margin-top:0px;
+            }    
+            .creditos p{
+                background-color: transparent;
+                font-size: 15px;
+                float: left;
+                text-align:right;
+            }
+            .creditos a{
+                text-decoration: none;
+                background-color: transparent;
+                font-size: 15px;
+                float: left;
+                color:white;
+                font-weight: bold;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align:center;
+            }
+            .creditos a:hover{
+                font-size:20px;
+            }
+            .separadort{
+                height:50px;
+            }
+            .parte1{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top:160px;
+                height:100px;
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 0px 0px 15px black;
+                margin-bottom:50px;
+            }
+            .opcion1 a{
+                text-decoration:none;
+                color:black;
+            }
+            .opcion1{
+                text-decoration:none;
+                padding-top:20px;
+                font-size:40px;
+                font-family: Bebas Neue;
+                padding-left:20px;
+                float:left;
+            }
+            .opcion1:hover{
+                background-color: gold;
+                border-radius:20px;
+                border:1px solid black;
+                box-shadow: 0px 0px 15px black;
+            }
+            .parte2{
+                margin-left: auto;
+                margin-right: auto;
+                height:1060px;
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 0px 0px 15px black;
+                margin-bottom:90px;
+                font-family: Bebas Neue;
+            }
+            .mes h1{
+                text-align:center;
+                padding-top:10px;
+                float:left;
+            }
+            .partido{
+                height:80px;
+                text-align:center;
+                float:left;
+                border-bottom: 3px solid rgb(189, 149, 149);
+                padding-top:10px;
+            }
+            .partido p{
+                padding-top:10px;
+            }
+            .fecha{
+                float:left;
+                font-size:20px;
+            }
+            .liga{
+                float:left;
+            }
+            .nombre{
+                float:left;
+                font-size:20px;
+            }
+            .escudo{
+                float:left;
+            }
+            .vs{
+                float:left;
+                font-size:35px;
+            }
+            .partido img{
+                width:100%;
+                height:60px;
+            }        
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav class="col-12 col-lg-12 menuh">
+        <div class="men col-10">
+            <input type="checkbox" id="menu">
+            <label for="menu"> ☰ </label>
+            <ul>
+                <li class="col-6"><a href="https://david10dx.github.io/FCB_home/">HOME</a></li>
+                <li class="col-6"><a href="https://david10dx.github.io/FCB_news/">NOTICIAS</a></li>
+                <li class="col-6"><a href="https://david10dx.github.io/FCB_clasificacion/">CLASIFICACIÓN</a></li>
+            </ul>
+        </div>
+        <div class="imagen3 col-2">
+            <img src="img/barcelona.png">
+        </div>
+
+    </nav>
+    <nav class="col-12 col-m-12 col-g-12 menun">
+        <div class="imagen col-12 col-lg-3">
+            <img src="img/FCBARCELONA.png" class="imagen1">
+        </div>    
+        <div class="opciones col-12 col-lg-9">
+            <a class="espacio col-12 col-lg-12"></a>
+            <a href="https://david10dx.github.io/FCB_home/" class="opcion l-12 col-lg-2">HOME</a>
+            <a href="https://david10dx.github.io/FCB_news/" class="opcion l-12 col-lg-2">NOTICIAS</a>
+            <a href="https://david10dx.github.io/FCB_clasificacion/" class="opcion l-12 col-lg-2">CLASIFICACIÓN</a>
+            <div class="imagen2 col-12 col-lg-6">
+                <img src="img/mesqueunclub.png">
+            </div>
+        </div>
+    </nav>      
+
+    <div class="col-11 col-lg-11 parte1">
+        <div class="col-6 col-lg-6 opcion1">
+            <a href="#septiembre"><p>Septiembre</p></a>
+        </div>
+        <div class="col-6 col-lg-6 opcion1">
+            <a href="#octubre"><p>Octubre</p></a>
+        </div>
+    </div>
+    <div class="col-11 col-lg-11 parte2">
+        <div class="col-12 col-lg-12 mes">
+            <h1 class="col-12 col-lg-12"><a name="septiembre">Septiembre</a></h1>
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>Sabado,11 de septiembre</p></div>
+                <div class="col-lg-1  col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Sevilla</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/sevilla.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>Lunes,20 de septiembre</p></div>
+                <div class="col-lg-1 col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/granada.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Granada CF</p></div>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>jueves,23 de septiembre</p></div>
+                <div class="col-lg-1 col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Cadiz</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/cadiz.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>domingo,26 de septiembre</p></div>
+                <div class="col-lg-1 col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/levante.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Levante</p></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>miercoles,29 de septiembre</p></div>
+                <div class="col-lg-1  col-1 liga"><img src="http://assets.stickpng.com/images/5842fe06a6515b1e0ad75b3b.png"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Benfica</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://e00-marca.uecdn.es/assets/sports/logos/football/png/144x144/251.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <h1 class="col-12 col-lg-12"><a name="octubre">Octubre</a></h1>
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>sabado,02 de octubre</p></div>
+                <div class="col-lg-1  col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Atletico de Madrid</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/atletico.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>domingo,17 de octubre</p></div>
+                <div class="col-lg-1  col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/valencia.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Valencia CF</p></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>miercoles,20 de octubre</p></div>
+                <div class="col-lg-1 col-1 liga"><img src="http://assets.stickpng.com/images/5842fe06a6515b1e0ad75b3b.png"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://e00-marca.uecdn.es/assets/sports/logos/football/png/144x144/194.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Dynamo Kyev</p></div>
+
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>domingo,24 de octubre</p></div>
+                <div class="col-lg-1 col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/real-madrid.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Real Madrid</p></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>miercoles,27 de octubre</p></div>
+                <div class="col-lg-1 col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>Rayo Vallecano</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/rayo.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-12 mes">
+            <div class="col-12 col-lg-12 partido">
+                <div class="col-lg-3 col-3 fecha"><p>domingo,31 de octubre</p></div>
+                <div class="col-lg-1 col-1 liga"><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg"></div>
+                <div class="col-lg-2 col-2 nombre"><p>FC Barcelona</p></div>
+                <div class="col-lg-1 col-1 escudo"><img class="logo"src="https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png"></div>
+                <div class="col-lg-2 col-2 vs"><p>-</p></div>
+                <div class="col-lg-1 col-1 escudo"><img src="https://assets.laliga.com/assets/2020/09/01/xsmall/27002754a98bf535807fe49a24cc63ea.png" class="logo"></div>
+                <div class="col-lg-2 col-2 nombre"><p> Dep. Alavés</p></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="redes col-12 col-lg-12">
+        <h3 class="col-12 col-lg-12">Sigue al Barça en redes sociales</h3>
+        <div class="red col-10 col-lg-8">
+            <div class="reds col-6 col-lg-2">
+                <a href="https://chats.viber.com/fcbarcelona" target="_blank">
+                    <img src="img/red1.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.facebook.com/fcbarcelona/">
+                    <img src="img/face.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://twitter.com/fcbarcelona_es" target="_blank">
+                    <img src="img/twitter.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.youtube.com/user/fcbarcelona" target="_blank">
+                    <img src="img/youtube.jpg">
+                </a>    
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.instagram.com/fcbarcelona/" target="_blank">
+                    <img src="img/insta.jpg">
+                </a>    
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.tiktok.com/@fcbarcelona" target="_blank">
+                    <img src="img/tiktok.jpg">
+                </a>    
+            </div>
+        </div>
+        <div class="separadort col-12 col-lg-12"></div>
+        <div class="creditos col-12 col-lg-12">
+            <p class="col-12 col-lg-2">Creadores:</p>
+            <a href="https://www.facebook.com/erickdavid.blancosantos/" target="_blank" class="col-12 col-lg-3">||Erick David Blanco||</a> 
+            <a href="https://www.facebook.com/hectorjosue.rodriguesdiscua" target="_blank" class="col-12 col-lg-3">||Héctor Josué Rodrigues||</a>
+            <a href="https://www.facebook.com/profile.php?id=100011257620607" target="_blank" class="col-12 col-lg-3">||Waldin Francisco Castillo||</a>
+           
+        </div>
+    </div> 
+</body>
+</html>
